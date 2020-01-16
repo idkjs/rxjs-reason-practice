@@ -5,9 +5,9 @@ dependencies:
   react-dom: 16.12.0_react@16.12.0
   reason-react: 0.7.0
   rxjs: 6.5.4
-  wonka: 4.0.7
 devDependencies:
   bs-platform: 7.0.1
+  gentype: 3.10.0
   html-webpack-plugin: 3.2.0_webpack@4.41.5
   webpack: 4.41.5_webpack@4.41.5
   webpack-cli: 3.3.10_webpack@4.41.5
@@ -1722,6 +1722,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==
+  /gentype/3.10.0:
+    dev: true
+    hasBin: true
+    requiresBuild: true
+    resolution:
+      integrity: sha512-NQUnbrCKLd9r1IX/BuNLPUYM/5Mg3/dNI1VvBUzM205ac314wXKt/t0WySA7euoNaPqkDmC9g96YEo79QOZ3iA==
   /get-caller-file/1.0.3:
     dev: true
     resolution:
@@ -4430,10 +4436,6 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-HxJdYWq1MTIQbJ3nw0cqssHoTNU267KlrDuGZ1WYlxDStUtKUhOaJmh112/TZmHxxUfuJqPXSOm7tDyas0OSIQ==
-  /wonka/4.0.7:
-    dev: false
-    resolution:
-      integrity: sha512-Uhyl2cgWCUksYtU0Jt8MSzKUqK4BVUrewWxnn1YlKL3Zco4sDcCUDkbgH0i762HJs1rtsq03cfzsCWxJKaDgVg==
   /worker-farm/1.7.0:
     dependencies:
       errno: 0.1.7
@@ -4542,6 +4544,7 @@ specifiers:
   bs-css: ^11.0.0
   bs-platform: ^7.0.1
   bs-webapi: ^0.15.6
+  gentype: 3.10.0
   html-webpack-plugin: ^3.2.0
   react: ^16.12.0
   react-dom: ^16.12.0
@@ -4550,4 +4553,3 @@ specifiers:
   webpack: ^4.41.5
   webpack-cli: ^3.3.10
   webpack-dev-server: ^3.10.1
-  wonka: 'https://cdn.pika.dev/wonka/master'
