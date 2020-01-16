@@ -27,5 +27,9 @@ let make = () => {
     <RxJsClickEventDemo />
     <h1> {ReasonReact.string("Wonka Dom Movement Logging demo")} </h1>
     <WonkaClickEventDemo />
+    <br />
+    <WonkaFromDomEventScanDemo />
+    <br />
+    <RxJsScanDemo />
   </div>;
 };

@@ -11,9 +11,9 @@ let make = () => {
     let operator = Operator.fromEvent(document, "click");
 
     operator->Observable.subscribe(
-      ~next=x => Js.log2("got value", x),
-      ~error=err => Js.log2("something wrong occurred", err),
-      ~complete=() => Js.log("done"),
+      ~next=x => Js.log2("RxJsClickEventDemo: got value", x),
+      ~error=err => Js.log2("RxJsClickEventDemo: something wrong occurred", err),
+      ~complete=() => Js.log("RxJsClickEventDemo: done"),
       (),
     )
     |> ignore;
