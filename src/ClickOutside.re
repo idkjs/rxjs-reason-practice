@@ -10,8 +10,7 @@ let useClickOutside = (onClickOutside: Dom.mouseEvent => unit) => {
   let elementRef = React.useRef(Js.Nullable.null);
 
   let handleMouseDown = (e: Dom.mouseEvent) => {
-    elementRef
-    ->React.Ref.current
+    elementRef.current
     ->Js.Nullable.toOption
     ->Belt.Option.map(refValue =>
         handleClickOutside(refValue, e, onClickOutside)
