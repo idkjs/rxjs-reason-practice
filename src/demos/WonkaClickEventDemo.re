@@ -7,9 +7,9 @@ open Webapi.Dom;
 open Document;
 [@react.component]
 let make = () => {
-  let handleMouseDown = (e: Dom.mouseEvent) => {
-    Js.log2("click: ", e);
-  };
+  // let handleMouseDown = (e: Dom.mouseEvent) => {
+  //   Js.log2("click: ", e);
+  // };
 
   React.useEffect0(() => {
     let element = getElementById("root", document)->Belt.Option.getExn;
