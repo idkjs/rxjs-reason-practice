@@ -2,9 +2,9 @@
 /* eslint-disable import/first */
 
 
-import {signalT as $$signalT} from './shims/Js.shim';
+import type {signalT as $$signalT} from './shims/Js.shim';
 
-import {talkbackT as $$talkbackT} from './shims/Js.shim';
+import type {talkbackT as $$talkbackT} from './shims/Js.shim';
 
 // tslint:disable-next-line:interface-over-type-literal
 export type talkbackT = $$talkbackT;
@@ -25,14 +25,14 @@ export type operatorT<a,b> = (_1:sourceT<a>) => sourceT<b>;
 export type teardownT = () => void;
 
 // tslint:disable-next-line:interface-over-type-literal
-export type subscriptionT = { readonly unsubscribe: (_1:void) => void };
+export type subscriptionT = { readonly unsubscribe: () => void };
 
 // tslint:disable-next-line:interface-over-type-literal
-export type observerT<a> = { readonly next: (_1:a) => void; readonly complete: (_1:void) => void };
+export type observerT<a> = { readonly next: (_1:a) => void; readonly complete: () => void };
 
 // tslint:disable-next-line:interface-over-type-literal
 export type subjectT<a> = {
   readonly source: sourceT<a>; 
   readonly next: (_1:a) => void; 
-  readonly complete: (_1:void) => void
+  readonly complete: () => void
 };

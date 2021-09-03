@@ -5,7 +5,7 @@ module Styles = {
 
   let dropdown = style([width(px(200))]);
   let dropdownButton =
-    style([border(px(1), solid, `rgba((0, 0, 0, 0.4))), padding(px(4))]);
+    style([border(px(1), solid, `rgba((0, 0, 0, `num(0.4)))), padding(px(4))]);
 
   let optionsContainer = style([position(relative)]);
   let options =
@@ -13,7 +13,7 @@ module Styles = {
       position(absolute),
       top(px(0)),
       padding2(~h=px(0), ~v=px(4)),
-      border(px(1), solid, `rgba((0, 0, 0, 0.4))),
+      border(px(1), solid, `rgba((0, 0, 0, `num(0.4)))),
       borderTopWidth(px(0)),
       width(pct(100.0)),
       boxSizing(borderBox),
@@ -23,7 +23,7 @@ module Styles = {
     style([
       padding2(~h=px(8), ~v=px(4)),
       boxSizing(borderBox),
-      backgroundColor(isSelected ? `rgba((0, 0, 0, 0.3)) : transparent),
+      backgroundColor(isSelected ? `rgba((0, 0, 0, `num(0.3))) : transparent),
     ]);
 };
 
@@ -48,9 +48,9 @@ let make =
   let (state, dispatch) = React.useReducer(reducer, {isOpen: false});
   let dropdownRef = useClickOutside(_ => dispatch(Close));
 
-  <div className=Styles.dropdown ref={ReactDOMRe.Ref.domRef(dropdownRef)}>
+  <div className=Styles.dropdown ref={ReactDOM.Ref.domRef(dropdownRef)}>
     <div onClick={_ => dispatch(Toggle)} className=Styles.dropdownButton>
-      {ReasonReact.string(selected != "" ? selected : "Select value")}
+      {React.string(selected != "" ? selected : "Select value")}
     </div>
     {state.isOpen
        ? <div className=Styles.optionsContainer>
@@ -61,12 +61,12 @@ let make =
                   key={string_of_int(index)}
                   onClick={_ => selectOption(item)}
                   className={Styles.optionItem(item == selected)}>
-                  {item |> ReasonReact.string}
+                  {item |> React.string}
                 </div>
               )
-              |> ReasonReact.array}
+              |> React.array}
            </div>
          </div>
-       : ReasonReact.null}
+       : React.null}
   </div>;
 };

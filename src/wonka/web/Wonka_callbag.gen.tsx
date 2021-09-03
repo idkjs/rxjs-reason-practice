@@ -2,12 +2,13 @@
 /* eslint-disable import/first */
 
 
-// tslint:disable-next-line:no-var-requires
-const Wonka_callbagBS = require('./Wonka_callbag.bs');
+// @ts-ignore: Implicit any on import
+import * as Wonka_callbagBS__Es6Import from './Wonka_callbag.bs';
+const Wonka_callbagBS: any = Wonka_callbagBS__Es6Import;
 
-import {callbagT as $$callbagT} from '../shims/Js.shim';
+import type {callbagT as $$callbagT} from '../shims/Js.shim';
 
-import {sourceT as Wonka_types_sourceT} from '../../../src/wonka/Wonka_types.gen';
+import type {sourceT as Wonka_types_sourceT} from '../../../src/wonka/Wonka_types.gen';
 
 // tslint:disable-next-line:interface-over-type-literal
 export type callbagSignal = 0 | 1 | 2;
@@ -22,6 +23,6 @@ export type callbagTalkback = (_1:callbagSignal) => void;
 // tslint:disable-next-line:interface-over-type-literal
 export type callbagT<a> = $$callbagT<a>;
 
-export const fromCallbag: <a>(_1:callbagT<a>) => Wonka_types_sourceT<a> = Wonka_callbagBS.fromCallbag;
+export const fromCallbag: <a>(callbag:callbagT<a>) => Wonka_types_sourceT<a> = Wonka_callbagBS.fromCallbag;
 
-export const toCallbag: <a>(_1:Wonka_types_sourceT<a>) => callbagT<a> = Wonka_callbagBS.toCallbag;
+export const toCallbag: <a>(source:Wonka_types_sourceT<a>) => callbagT<a> = Wonka_callbagBS.toCallbag;

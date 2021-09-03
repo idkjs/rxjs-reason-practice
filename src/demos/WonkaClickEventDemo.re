@@ -14,7 +14,7 @@ let make = () => {
   React.useEffect0(() => {
     let element = getElementById("root", document)->Belt.Option.getExn;
     Wonka.fromDomEvent(element, "click")
-    |> Wonka.subscribe((. click) => Js.log2("Wonka Click: ",click));
+    |> Wonka.subscribe((. click) => Js.log2("Wonka Click: ",click))|>ignore;
     None;
   });
   <div>

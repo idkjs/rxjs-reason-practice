@@ -2,16 +2,17 @@
 /* eslint-disable import/first */
 
 
-// tslint:disable-next-line:no-var-requires
-const Wonka_observableBS = require('./Wonka_observable.bs');
+// @ts-ignore: Implicit any on import
+import * as Wonka_observableBS__Es6Import from './Wonka_observable.bs';
+const Wonka_observableBS: any = Wonka_observableBS__Es6Import;
 
-import {observableObserverT as $$observableObserverT} from '../shims/Js.shim';
+import type {observableObserverT as $$observableObserverT} from '../shims/Js.shim';
 
-import {observableSubscriptionT as $$observableSubscriptionT} from '../shims/Js.shim';
+import type {observableSubscriptionT as $$observableSubscriptionT} from '../shims/Js.shim';
 
-import {observableT as $$observableT} from '../shims/Js.shim';
+import type {observableT as $$observableT} from '../shims/Js.shim';
 
-import {sourceT as Wonka_types_sourceT} from '../../../src/wonka/Wonka_types.gen';
+import type {sourceT as Wonka_types_sourceT} from '../../../src/wonka/Wonka_types.gen';
 
 // tslint:disable-next-line:interface-over-type-literal
 export type observableSubscriptionT = $$observableSubscriptionT;
@@ -22,6 +23,6 @@ export type observableObserverT<a> = $$observableObserverT<a>;
 // tslint:disable-next-line:interface-over-type-literal
 export type observableT<a> = $$observableT<a>;
 
-export const fromObservable: <a>(_1:observableT<a>) => Wonka_types_sourceT<a> = Wonka_observableBS.fromObservable;
+export const fromObservable: <a>(input:observableT<a>) => Wonka_types_sourceT<a> = Wonka_observableBS.fromObservable;
 
-export const toObservable: <a>(_1:Wonka_types_sourceT<a>) => observableT<a> = Wonka_observableBS.toObservable;
+export const toObservable: <a>(source:Wonka_types_sourceT<a>) => observableT<a> = Wonka_observableBS.toObservable;
